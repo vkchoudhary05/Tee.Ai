@@ -8,3 +8,9 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # Tee.Ai
 This is ai chatbot you can ask anything which you want they give answer 
+
+# step1:Go in frontend folder 
+
+# step2: npm i -------> install pakages and libraries
+
+# step3: Run command ------> npm run dev 
