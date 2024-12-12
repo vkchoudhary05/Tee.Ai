@@ -4,6 +4,8 @@ import ChatWindow from "../components/Chatwindow";
 import ChatHistory from "../components/ChatHistory";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import  ImageGenerate from "../components/ImageGenerator"
+import TermsAndCondition from "../components/TermsAndCondition"
 
 // Import Icons from React Icons
 import { FaComments, FaHistory, FaFilePdf, FaImage, FaInfoCircle, FaSignOutAlt } from "react-icons/fa";
@@ -75,8 +77,16 @@ const Dashboard = () => {
         <div className="right-half">
           {selectedMenuOption === "chat" ? (
             <ChatWindow user={user} />
+
           ) : selectedMenuOption === "chatHistory" ? (
             <ChatHistory />
+
+           ) : selectedMenuOption === "imageGenerate" ?(
+              <ImageGenerate/>
+
+           ): selectedMenuOption ==="termsCondition"?(
+                <TermsAndCondition/>
+
           ) : (
             <div className="default-section">
             <h3>Welcome to Tee.Ai</h3>

@@ -22,7 +22,7 @@ const ChatHistory = () => {
     <div className="chat-window-container">
       {/* Header Section */}
       <div className="chat-window-header">
-        Welcome, {user.phoneNumber || "User"}'s Chat History
+         {user.phoneNumber || "User"}    Chat History
       </div>
 
       {/* Messages Section */}
