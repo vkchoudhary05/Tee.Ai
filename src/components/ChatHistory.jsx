@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import "../styles/ChatHistory.css";
+import "../styles/ChatStyles.css"; // Apply the shared styles
 import { UserContext } from "../context/UserContext"; // Import UserContext
 
 const ChatHistory = () => {
@@ -19,20 +19,26 @@ const ChatHistory = () => {
   }
 
   return (
-    <div className="chat-history-container">
+    <div className="chat-window-container">
+      {/* Header Section */}
       <div className="chat-window-header">
-        {user.phoneNumber}'s Chat History
+        Welcome, {user.phoneNumber || "User"}'s Chat History
       </div>
+
+      {/* Messages Section */}
       <div className="chat-window-messages">
         {chatHistory.length > 0 ? (
           chatHistory.map((msg, index) => (
-            <div key={index} className="chat-message">
-              <p>
-                <strong>
-                  {msg.sender === user.phoneNumber ? "You" : msg.sender}:
-                </strong>{" "}
-                {msg.text}
-              </p>
+            <div
+              key={index}
+              className={`chat-message ${
+                msg.sender === user.phoneNumber ? "user-message" : "bot-message"
+              }`}
+            >
+              <strong>
+                {msg.sender === user.phoneNumber ? "You" : msg.sender}:
+              </strong>{" "}
+              {msg.text}
             </div>
           ))
         ) : (

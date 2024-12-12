@@ -1,21 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
-import "../styles/Chatwindow.css";
+import "../styles/ChatStyles.css";
 import { sendMessageToChatGPT } from "../services/OpenAiServices";
-import { UserContext } from "../context/UserContext"; // Adjust the path
+import { UserContext } from "../context/UserContext";
 
 const ChatWindow = () => {
-  const { user } = useContext(UserContext); // Access user details from context
+  const { user } = useContext(UserContext);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Ensure user is available
   if (!user) {
     console.error("User not defined!");
-    return <div>Error: User not logged in.</div>;
+    return <div className="error-message">Error: User not logged in.</div>;
   }
 
-  const storageKey = `chatHistory_${user.phoneNumber}`; // Use phoneNumber as the unique key
+  const storageKey = `chatHistory_${user.phoneNumber}`;
 
   useEffect(() => {
     const storedMessages = JSON.parse(localStorage.getItem(storageKey)) || [];
@@ -27,31 +26,45 @@ const ChatWindow = () => {
   }, [messages, storageKey]);
 
   const handleSend = async () => {
-    if (input.trim()) {
-      const userMessage = { sender: user.phoneNumber, text: input };
-      const updatedMessages = [...messages, userMessage];
-      setMessages(updatedMessages);
-      setInput("");
-      setLoading(true);
+    const trimmedInput = input.trim();
+    if (!trimmedInput) return;
 
-      try {
-        const gptResponse = await sendMessageToChatGPT(input);
-        const botMessage = { sender: "Bot", text: gptResponse };
-        setMessages([...updatedMessages, botMessage]);
-      } catch (error) {
-        console.error("Error fetching GPT response:", error);
-      } finally {
-        setLoading(false);
-      }
+    const userMessage = { sender: user.phoneNumber, text: trimmedInput };
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const gptResponse = await sendMessageToChatGPT(trimmedInput);
+      const botMessage = { sender: "Bot", text: gptResponse };
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+    } catch (error) {
+      console.error("Error fetching GPT response:", error);
+      const errorMessage = { sender: "Bot", text: "Sorry, I couldn't process that." };
+      setMessages((prevMessages) => [...prevMessages, errorMessage]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSend();
     }
   };
 
   return (
     <div className="chat-window-container">
-      <div className="chat-window-header">Welcome {user.phoneNumber}</div>
+      {/* Header Section */}
+      <div className="chat-window-header">
+        Welcome, {user.phoneNumber || "User"}
+      </div>
+
+      {/* Messages Section */}
       <div className="chat-window-messages">
         {messages.map((msg, index) => (
-          <p
+          <div
             key={index}
             className={`chat-message ${
               msg.sender === user.phoneNumber ? "user-message" : "bot-message"
@@ -59,20 +72,23 @@ const ChatWindow = () => {
           >
             <strong>{msg.sender === user.phoneNumber ? "You" : msg.sender}: </strong>
             {msg.text}
-          </p>
+          </div>
         ))}
-        {loading && <p className="loading">***</p>}
+        {loading && <div className="loading">Bot is typing...</div>}
       </div>
+
+      {/* Input Section */}
       <div className="chat-window-input-container">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyPress}
           placeholder="Type a message..."
           className="chat-window-input"
         />
-        <button onClick={handleSend} className="chat-window-button">
-          Send
+        <button onClick={handleSend} className="chat-window-button" disabled={loading}>
+          {loading ? "..." : "Send"}
         </button>
       </div>
     </div>

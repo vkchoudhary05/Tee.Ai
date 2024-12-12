@@ -19,6 +19,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+
+      
       {/* Wrap the Dashboard route with ProtectedRoute */}
       <Route
         path="dashboard"
