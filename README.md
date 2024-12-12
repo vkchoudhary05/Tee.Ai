@@ -9,8 +9,12 @@ Currently, two official plugins are available:
 # Tee.Ai
 This is ai chatbot you can ask anything which you want they give answer 
 
+
+We cannot use backened we store data in local storage 
+
 # step1:Go in frontend folder 
 
 # step2: npm i -------> install pakages and libraries
 
 # step3: Run command ------> npm run dev 
+
