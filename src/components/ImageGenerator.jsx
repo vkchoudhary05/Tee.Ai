@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { sendMessageToChatGPT } from "../services/OpenAiServices";
-// import { UserContext } from "../context/UserContext";
 
-// Assuming you already have the OpenAI integration here
+
+
 const ImageSearchComponent = () => {
   const [query, setQuery] = useState("");
   const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // OpenAI Image Generation Function
+
   const generateImage = async (query) => {
     setLoading(true);
     setError(""); // Reset error
     try {
-      // Make OpenAI API call (you should already have this working in your code)
+      
+      
       const response = await sendMessageToChatGPT({
         prompt: query,
         n: 1,
@@ -49,7 +50,12 @@ const ImageSearchComponent = () => {
           placeholder="Enter search query..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          style={{ padding: "10px", width: "80%", borderRadius: "5px", border: "1px solid #ccc" }}
+          style={{ padding: "10px",
+            width: "50%",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+      
+           }}
         />
         <button
           onClick={handleSearch}
@@ -57,7 +63,7 @@ const ImageSearchComponent = () => {
             padding: "10px",
             backgroundColor: "#4CAF50",
             color: "white",
-            borderRadius: "5px",
+            borderRadius: "10px",
             border: "none",
             cursor: "pointer",
           }}

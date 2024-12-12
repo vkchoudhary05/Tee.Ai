@@ -58,7 +58,7 @@ const ChatWindow = () => {
     <div className="chat-window-container">
       {/* Header Section */}
       <div className="chat-window-header">
-        Welcome, {user.phoneNumber || "User"}
+        Hey there  {user.phoneNumber || "User"}
       </div>
 
       {/* Messages Section */}
