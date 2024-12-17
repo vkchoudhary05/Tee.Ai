@@ -1,0 +1,137 @@
+/* General Reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: blue;
+}
+
+/* Left and Right halves */
+.left-half {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+}
+
+.right-half {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  background-color: #3e8588;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(251, 245, 245);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Robot image */
+.robot {
+  height: 90%;
+  width: auto;
+}
+
+/* Login form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 50%;
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+.login-form input,
+.login-form select {
+  padding: 15px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50%;
+}
+
+.login-form select {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.login-form button {
+  padding: 12px 15px;
+  background-color: #13cdda;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-form button:hover {
+  background-color: #1a00764e;
+}
+
+.error-message {
+  color: rgb(162, 45, 45);
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+
+.header img {
+  width: 100px;
+  height: auto;
+}
+
+
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ddd8e1 0%, #2575fc 100%);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.8);
+  border-top: 5px solid #ffcc00; /* Add a colorful top border for contrast */
+  border-radius: 50%;
+  animation: spin 1.3s linear infinite;
+}
+
+/* Keyframe animation for spinning */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
