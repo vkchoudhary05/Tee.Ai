@@ -20,7 +20,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   background-color:white;
+=======
+  background-color:rgb(20, 111, 88);
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 }
 
 .right-half {
@@ -37,7 +41,11 @@ html {
 
 /* Robot image */
 .robot {
+<<<<<<< HEAD
   height: 90%;
+=======
+  height: 80%;
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
   width: auto;
 }
 
@@ -54,11 +62,17 @@ html {
 .login-form input,
 .login-form select {
   padding: 15px 15px;
+<<<<<<< HEAD
   color: #c80b1480;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 50%;
+=======
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 }
 
 .login-form select {
@@ -68,8 +82,13 @@ html {
 
 .login-form button {
   padding: 12px 15px;
+<<<<<<< HEAD
   background-color: #13cdda;
   color: white;
+=======
+  background-color: #28a745;
+  color: rgb(158, 52, 52);
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -77,6 +96,7 @@ html {
 }
 
 .login-form button:hover {
+<<<<<<< HEAD
   background-color: #1a00764e;
 }
 
@@ -84,6 +104,15 @@ html {
   color: rgb(162, 45, 45);
   font-size: 14px;
   margin-top: 5px;
+=======
+  background-color: #135722;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 }
 
 .success-message {
@@ -101,6 +130,7 @@ html {
 }
 
 .header img {
+<<<<<<< HEAD
   width: 94px;
   height: auto;
 }
@@ -115,6 +145,11 @@ h1 {
   letter-spacing: 2px; /* Increases the spacing between letters */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
 }
+=======
+  width: 100px;
+  height: auto;
+}
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 
 
 
@@ -123,7 +158,11 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 100vh;
+<<<<<<< HEAD
   background: linear-gradient(135deg, #ddd8e1 0%, #2575fc 100%);
+=======
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
   color: white;
   font-family: Arial, sans-serif;
 }

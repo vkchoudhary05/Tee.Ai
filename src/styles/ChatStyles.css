@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 .chat-window-container {
@@ -10,6 +11,17 @@
   position: absolute; /* Allows precise placement */
   right: 0; /* Aligns it to the left of the screen */
   border-right: 10px solid #dcdcdc; /* Optional: adds a dividing border */
+=======
+.chat-window-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  width: 45%; /* Occupies half of the screen */
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute; /* Allows precise placement */
+  right: 0; /* Aligns it to the left of the screen */
+  border-right: 1px solid #dcdcdc; /* Optional: adds a dividing border */
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow effect */
 }
 
@@ -52,11 +64,18 @@
 .bot-message {
   background-color: #e0e0e0;
   color: black;
+<<<<<<< HEAD
   text-align: right;
   border-bottom-left-radius: 0;
 }
 
 
+=======
+  text-align: left;
+  border-bottom-left-radius: 0;
+}
+
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 /* Input Section */
 .chat-window-input-container {
   display: flex;
@@ -87,4 +106,9 @@
   transition: background-color 0.2s ease;
 }
 
+<<<<<<< HEAD
+=======
+.chat-window-button:hover {
+  background-color: #248a78;}
+>>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
   
