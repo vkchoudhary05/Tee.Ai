@@ -6,6 +6,7 @@ import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import ImageGenerate from "../components/ImageGenerator";
 import TermsAndCondition from "../components/TermsAndCondition";
+import AskToPdf from "../components/AskToPdf"; // Import AskToPdf
 
 // Import Icons from React Icons
 import { FaComments, FaHistory, FaFilePdf, FaImage, FaInfoCircle, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
@@ -100,6 +101,8 @@ const Dashboard = () => {
             <ChatHistory />
           ) : selectedMenuOption === "imageGenerate" ? (
             <ImageGenerate />
+          ): selectedMenuOption === "askpdf" ? (
+            <AskToPdf />  
           ) : selectedMenuOption === "termsCondition" ? (
             <TermsAndCondition />
           ) : (
@@ -120,13 +123,6 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
-
-
-
-
-
 
 
 

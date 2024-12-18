@@ -84,7 +84,7 @@ function Login() {
           </div>
           <div className="right-half">
             <div className="header">
-              <img src="https://cdn.pixabay.com/photo/2021/09/25/05/25/robot-6654025_1280.png" alt="Tee.Ai" />
+              <img src="https://cdn.pixabay.com/photo/2016/12/13/21/20/alien-1905155_1280.png" alt="Tee.Ai" />
             </div>
             <h1>Tee.Ai</h1>
             <form className="login-form" onSubmit={handleSubmit}>

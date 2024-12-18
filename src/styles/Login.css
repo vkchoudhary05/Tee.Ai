@@ -54,6 +54,7 @@ html {
 .login-form input,
 .login-form select {
   padding: 15px 15px;
+  color: #c80b1480;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -100,8 +101,19 @@ html {
 }
 
 .header img {
-  width: 100px;
+  width: 94px;
   height: auto;
+}
+h1 {
+  font-family: 'Arial', sans-serif; /* Sets the font */
+  font-size: 35px; /* Adjusts the size of the text */
+  font-weight: bold; /* Makes the text bold */
+  color: #a0c8d7; /* Sets the text color (a shade of green) */
+  text-align: center; /* Centers the text horizontally */
+  margin-top: 10px; /* Adds space above the heading */
+  margin-bottom: 10px; /* Adds space below the heading */
+  letter-spacing: 2px; /* Increases the spacing between letters */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
 }
 
 
