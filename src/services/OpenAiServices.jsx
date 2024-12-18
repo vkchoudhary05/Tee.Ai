@@ -1,10 +1,5 @@
 import axios from "axios";
 
-<<<<<<< HEAD
-
-=======
-// Replace with your OpenAI API Key from https://platform.openai.com/account/api-keys
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 const OPENAI_API_KEY = "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"
 
 
@@ -38,11 +33,7 @@ export const sendMessageToChatGPT = async (message) => {
 
     const botResponse =
       response?.data?.choices?.[0]?.message?.content || "No response from GPT";
-<<<<<<< HEAD
     console.log("Bot response extracted:",   botResponse);
-=======
-    console.log("Bot response extracted:", botResponse);
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 
     return botResponse;
   } catch (error) {

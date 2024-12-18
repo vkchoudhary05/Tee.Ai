@@ -34,7 +34,7 @@ const PdfUploader = () => {
       setResponseText(botResponse);
     } catch (err) {
       console.error("Error processing the file:", err);
-      setError("Failed to process the PDF file or communicate with ChatGPT.");
+      setError("Failed to process the PDF file or communicate with Tee.Ai.");
     } finally {
       setIsLoading(false);
     }

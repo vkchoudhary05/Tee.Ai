@@ -1,27 +1,15 @@
-<<<<<<< HEAD
 import React, { useState, useContext, useEffect, useRef } from "react";
-=======
-import React, { useState, useContext } from "react";
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 import "../styles/Dashboard.css";
 import ChatWindow from "../components/Chatwindow";
 import ChatHistory from "../components/ChatHistory";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import ImageGenerate from "../components/ImageGenerator";
 import TermsAndCondition from "../components/TermsAndCondition";
 import AskToPdf from "../components/AskToPdf"; // Import AskToPdf
 
 // Import Icons from React Icons
 import { FaComments, FaHistory, FaFilePdf, FaImage, FaInfoCircle, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
-=======
-import  ImageGenerate from "../components/ImageGenerator"
-import TermsAndCondition from "../components/TermsAndCondition"
-
-// Import Icons from React Icons
-import { FaComments, FaHistory, FaFilePdf, FaImage, FaInfoCircle, FaSignOutAlt } from "react-icons/fa";
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -29,13 +17,10 @@ const Dashboard = () => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-<<<<<<< HEAD
   // Reference for the sidebar
   const sidebarRef = useRef(null);
 
   // Handle sidebar toggle
-=======
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
   const handleMenuClick = (menu) => {
     if (menu === "logout") {
       setUser(null);
@@ -46,7 +31,6 @@ const Dashboard = () => {
     }
   };
 
-<<<<<<< HEAD
   // Close sidebar when clicking outside of it
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -68,21 +52,11 @@ const Dashboard = () => {
         className={`sidebar ${isSidebarOpen ? "open" : ""}`}
         ref={sidebarRef} // Attach ref to sidebar
       >
-=======
-  return (
-    <div className="dashboard-container">
-      {/* Sidebar */}
-      <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
         <button
           className="toggle-btn"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
-<<<<<<< HEAD
           {isSidebarOpen ? <FaTimes /> : <FaBars />}
-=======
-          {isSidebarOpen ? "Close Menu" : "Open Menu"}
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
         </button>
         {isSidebarOpen && (
           <nav className="sidebar-menu">
@@ -111,24 +85,15 @@ const Dashboard = () => {
         )}
       </div>
 
-<<<<<<< HEAD
       {/* Main Content */}
       <div className="dashboard">
         <div className="left-half">
           <img
             src="https://cdn.create.vista.com/api/media/medium/212678218/stock-photo-rendering-cute-artificial-intelligence-robot-brain?token="
-=======
-      <div className="dashboard">
-        {/* Left Half: AI Image */}
-        <div className="left-half">
-          <img
-            src="https://as1.ftcdn.net/v2/jpg/08/00/83/48/1000_F_800834842_jDSnC9OboQNpdupItFDNzam3U8aTBqp2.webp"
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
             alt="AI Robot"
             className="ai-image"
           />
         </div>
-<<<<<<< HEAD
         <div className="right-half">
           {selectedMenuOption === "chat" ? (
             <ChatWindow user={user} />
@@ -150,36 +115,6 @@ const Dashboard = () => {
               </p>
               <p className="typing-text">How can I help you today?</p>
             </div>
-=======
-
-        {/* Right Half: Conditionally Render Logic */}
-        <div className="right-half">
-          {selectedMenuOption === "chat" ? (
-            <ChatWindow user={user} />
-
-          ) : selectedMenuOption === "chatHistory" ? (
-            <ChatHistory />
-
-           ) : selectedMenuOption === "imageGenerate" ?(
-              <ImageGenerate/>
-
-           ): selectedMenuOption ==="termsCondition"?(
-                <TermsAndCondition/>
-
-          ) : (
-            <div className="default-section">
-            <h3>Welcome to Tee.Ai</h3>
-            <p>
-              {user ? (
-                `User Information: ${user.countryCode} ${user.phoneNumber}`
-              ) : (
-                "No user information found. Please log in."
-              )}
-            </p>
-            <p className="typing-text">How can I help you today?</p>
-          </div>
-          
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
           )}
         </div>
       </div>
@@ -195,16 +130,6 @@ export default Dashboard;
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
 // import React, { useState, useContext } from "react";
 // import "../styles/Dashboard.css";
 // import ChatWindow from "../components/Chatwindow";

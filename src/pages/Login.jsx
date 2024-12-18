@@ -77,22 +77,14 @@ function Login() {
         <div className="container">
           <div className="left-half">
             <img
-<<<<<<< HEAD
               src="https://cdn.create.vista.com/api/media/medium/212678218/stock-photo-rendering-cute-artificial-intelligence-robot-brain?token="
-=======
-              src="https://as1.ftcdn.net/v2/jpg/08/00/83/48/1000_F_800834842_jDSnC9OboQNpdupItFDNzam3U8aTBqp2.webp"
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
               alt="AI Robot"
               className="robot"
             />
           </div>
           <div className="right-half">
             <div className="header">
-<<<<<<< HEAD
               <img src="https://cdn.pixabay.com/photo/2016/12/13/21/20/alien-1905155_1280.png" alt="Tee.Ai" />
-=======
-              <img src="https://cdn.pixabay.com/photo/2021/09/25/05/25/robot-6654025_1280.png" alt="Tee.Ai" />
->>>>>>> cb5cbce2950087d570ce1e178ba32340cb29c6a0
             </div>
             <h1>Tee.Ai</h1>
             <form className="login-form" onSubmit={handleSubmit}>
