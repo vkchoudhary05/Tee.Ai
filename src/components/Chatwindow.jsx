@@ -37,11 +37,11 @@ const ChatWindow = () => {
 
     try {
       const gptResponse = await sendMessageToChatGPT(trimmedInput);
-      const botMessage = { sender: "Bot", text: gptResponse };
+      const botMessage = { sender: "Tee.Ai", text: gptResponse };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
       console.error("Error fetching GPT response:", error);
-      const errorMessage = { sender: "Bot", text: "Sorry, I couldn't process that." };
+      const errorMessage = { sender: "Tee.Ai", text: "Sorry, I couldn't process that." };
       setMessages((prevMessages) => [...prevMessages, errorMessage]);
     } finally {
       setLoading(false);

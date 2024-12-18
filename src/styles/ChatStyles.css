@@ -43,17 +43,19 @@
 }
 
 .user-message {
-  background-color: #566c81;
+  background-color: #74a8db;
   color: white;
-  text-align: left;
+  text-align: right;
   border-bottom-right-radius: 0;
+  margin-left: 250px;
 }
 
 .bot-message {
   background-color: #e0e0e0;
-  color: black;
-  text-align: right;
+  color: rgb(77, 41, 41);
+  text-align: left;
   border-bottom-left-radius: 0;
+  
 }
 
 
