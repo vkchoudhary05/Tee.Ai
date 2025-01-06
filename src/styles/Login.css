@@ -1,4 +1,4 @@
-/* General Reset */
+/* General Reset
 body,
 html {
   margin: 0;
@@ -6,7 +6,7 @@ html {
   box-sizing: border-box;
 }
 
-/* Main container */
+
 .container {
   display: flex;
   height: 100vh;
@@ -14,7 +14,7 @@ html {
   background-color: blue;
 }
 
-/* Left and Right halves */
+
 .left-half {
   flex: 0.5;
   display: flex;
@@ -35,13 +35,13 @@ html {
   padding: 20px;
 }
 
-/* Robot image */
+
 .robot {
   height: 90%;
-  width: auto;
+  width: 100%;
 }
 
-/* Login form */
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -92,7 +92,6 @@ html {
   font-weight: bold;
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: center;
@@ -105,15 +104,15 @@ html {
   height: auto;
 }
 h1 {
-  font-family: 'Arial', sans-serif; /* Sets the font */
-  font-size: 35px; /* Adjusts the size of the text */
-  font-weight: bold; /* Makes the text bold */
-  color: #a0c8d7; /* Sets the text color (a shade of green) */
-  text-align: center; /* Centers the text horizontally */
-  margin-top: 10px; /* Adds space above the heading */
-  margin-bottom: 10px; /* Adds space below the heading */
-  letter-spacing: 2px; /* Increases the spacing between letters */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+  font-family: 'Arial', sans-serif; 
+  font-size: 35px; 
+  font-weight: bold; 
+  color: #a0c8d7; 
+  text-align: center; 
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  letter-spacing: 2px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 
@@ -128,17 +127,172 @@ h1 {
   font-family: Arial, sans-serif;
 }
 
-/* Spinner */
+
 .spinner {
   width: 50px;
   height: 50px;
   border: 5px solid rgba(255, 255, 255, 0.8);
-  border-top: 5px solid #ffcc00; /* Add a colorful top border for contrast */
+  border-top: 5px solid #ffcc00; 
   border-radius: 50%;
   animation: spin 1.3s linear infinite;
 }
 
-/* Keyframe animation for spinning */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+ */
+
+
+ /* General Reset */
+
+
+
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+}
+
+/* Main container */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: blue;
+  overflow: hidden;  /* Prevent scroll inside container */
+}
+
+/* Left and Right halves */
+.left-half {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.right-half {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  background-color: #3e8588;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(251, 245, 245);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 570px) {
+  .container {
+    flex-direction: column-reverse;
+    height: 100vh;
+  }
+  
+  .left-half,
+  .right-half {
+    width: 100%;
+    height: auto; /* Adjust height for natural content flow */
+  }
+
+  .login-form {
+    width: 60; /* More screen usage on mobile */
+    max-width: 300px;
+  }
+  
+  .dashboard .robot-image {
+    width: 100%; /* Make image responsive */
+    max-height: 300px; /* Limit the image height on smaller screens */
+  }
+}
+
+/* Robot image */
+.robot {
+  height: 90%;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Login form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width:42;
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+.login-form input,
+.login-form select {
+  padding: 18px;
+  color: #c80b1480;
+  background: white;
+  font-size: 11px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50%;
+}
+
+
+.login-form button {
+  padding: 13px ;
+  background-color: #13cdda;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.login-form button:hover {
+  background-color: #0d6e75;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+
+.header img {
+  width: 70px;
+  height: auto;
+}
+
+/* Loading Screen */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ddd8e1 0%, #2575fc 100%);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.8);
+  border-top: 5px solid #ffcc00;
+  border-radius: 50%;
+  animation: spin 1.3s linear infinite;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

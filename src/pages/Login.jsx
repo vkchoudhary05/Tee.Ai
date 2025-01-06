@@ -92,6 +92,11 @@ function Login() {
                 <select
                   value={countryCode}
                   onChange={handleCountryCodeChange}
+                  style={{
+                    marginRight: "10px",
+                    width:"80px",
+                
+                  }}
                 >
                   <option value="+91">India (+91)</option>
                   <option value="+44">UK (+44)</option>

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   height: 103vh; /* Full viewport height */
-  width: 51%; /* Occupies half of the screen */
+  width: 50.75%; /* Occupies half of the screen */
   font-family: Arial, Helvetica, sans-serif;
   position: absolute; /* Allows precise placement */
   right: 0; /* Aligns it to the left of the screen */
@@ -22,6 +22,8 @@
   border: none;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0; /* Prevent header from shrinking */
+
 }
 
 /* Messages Section */
@@ -89,4 +91,47 @@
   transition: background-color 0.2s ease;
 }
 
-  
+  /* Media Query for Smaller Devices */
+@media (max-width: 768px) {
+  .chat-window-container {
+    width: 100%; /* Takes up full width */
+    height: 100vh; /* Full height */
+    border-right: none; /* Remove the dividing border */
+    box-shadow: none; /* Remove the shadow on smaller devices */
+  }
+
+  .chat-window-header {
+    font-size: 18px; /* Adjust header font size for smaller screens */
+  }
+
+  .chat-window-input {
+    width: 70%; /* Adjust input field width on smaller screens */
+  }
+
+  .chat-window-button {
+    padding: 10px; /* Increase button size on smaller screens */
+  }
+
+  .chat-message {
+    max-width: 80%; /* Adjust message width on smaller screens */
+  }
+}
+
+/* Media Query for Extra Small Devices */
+@media (max-width: 480px) {
+  .chat-window-header {
+    font-size: 16px; /* Adjust header font size even further */
+  }
+
+  .chat-window-input {
+    width: 60%; /* Adjust input width on very small screens */
+  }
+
+  .chat-window-button {
+    padding: 8px; /* Adjust button size for extra small screens */
+  }
+
+  .chat-message {
+    max-width: 90%; /* Allow more space for messages */
+  }
+}
