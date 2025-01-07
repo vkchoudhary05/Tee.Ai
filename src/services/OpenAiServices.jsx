@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const OPENAI_API_KEY = "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"
+const OPENAI_API_KEY = "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"
 
 
 

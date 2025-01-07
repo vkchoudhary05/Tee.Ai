@@ -1,178 +1,19 @@
-/* General Reset
 body,
 html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;  
 }
-
 
 .container {
   display: flex;
   height: 100vh;
   width: 100vw;
   background-color: blue;
+  overflow: hidden;  
 }
 
-
-.left-half {
-  flex: 0.5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color:white;
-}
-
-.right-half {
-  flex: 0.5;
-  display: flex;
-  justify-content: center;
-  background-color: #3e8588;
-  align-items: center;
-  flex-direction: column;
-  color: rgb(251, 245, 245);
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
-
-.robot {
-  height: 90%;
-  width: 100%;
-}
-
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  width: 50%;
-  max-width: 350px;
-  margin-top: 20px;
-}
-
-.login-form input,
-.login-form select {
-  padding: 15px 15px;
-  color: #c80b1480;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 50%;
-}
-
-.login-form select {
-  width: 100px;
-  margin-right: 10px;
-}
-
-.login-form button {
-  padding: 12px 15px;
-  background-color: #13cdda;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.login-form button:hover {
-  background-color: #1a00764e;
-}
-
-.error-message {
-  color: rgb(162, 45, 45);
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.success-message {
-  color: green;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1px;
-}
-
-.header img {
-  width: 94px;
-  height: auto;
-}
-h1 {
-  font-family: 'Arial', sans-serif; 
-  font-size: 35px; 
-  font-weight: bold; 
-  color: #a0c8d7; 
-  text-align: center; 
-  margin-top: 10px; 
-  margin-bottom: 10px; 
-  letter-spacing: 2px; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-}
-
-
-
-.loading-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #ddd8e1 0%, #2575fc 100%);
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(255, 255, 255, 0.8);
-  border-top: 5px solid #ffcc00; 
-  border-radius: 50%;
-  animation: spin 1.3s linear infinite;
-}
-
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
- */
-
-
- /* General Reset */
-
-
-
-
-body,
-html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;  /* Prevent horizontal scrolling */
-}
-
-/* Main container */
-.container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  background-color: blue;
-  overflow: hidden;  /* Prevent scroll inside container */
-}
-
-/* Left and Right halves */
 .left-half {
   flex: 1;
   display: flex;
@@ -193,45 +34,61 @@ html {
   padding: 20px;
 }
 
-/* Responsive Layout */
+/* Mobile and smaller screen handling */
 @media (max-width: 570px) {
   .container {
     flex-direction: column-reverse;
     height: 100vh;
+    display: flex;
+    justify-content: center;  /* Centers the content vertically */
+    align-items: center;  /* Centers the content horizontally */
   }
-  
+
   .left-half,
   .right-half {
     width: 100%;
-    height: auto; /* Adjust height for natural content flow */
+    height: auto;
   }
 
   .login-form {
-    width: 60; /* More screen usage on mobile */
-    max-width: 300px;
+    width: 100%;  /* Take up full width of the screen */
+    max-width: 300px;  /* Maximum width to prevent the form from becoming too large */
+    margin: 0 auto;  /* Center the login form horizontally */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
   }
-  
+
   .dashboard .robot-image {
-    width: 100%; /* Make image responsive */
-    max-height: 300px; /* Limit the image height on smaller screens */
+    width: 100%;
+    max-height: 300px;
   }
 }
 
-/* Robot image */
 .robot {
   height: 90%;
   width: 100%;
   max-width: 350px;
 }
 
-/* Login form */
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width:42;
-  max-width: 350px;
-  margin-top: 20px;
+/* Style for login form button */
+.login-form button {
+  padding: 13px;
+  background-color: #13cdda;
+  color: rgb(191, 76, 76);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100%;  /* Ensures the button takes the full width of the form */
+  margin: 10px 0;  /* Adds some space above and below the button */
+}
+
+/* Hover effect for the button */
+.login-form button:hover {
+  background-color: #0d6e75;
 }
 
 .login-form input,
@@ -239,28 +96,12 @@ html {
   padding: 18px;
   color: #c80b1480;
   background: white;
-  font-size: 11px;
+  font-size: 14px;  /* Increased font size for better readability */
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 50%;
+  width: 100%;  /* Ensure inputs take up the full width */
 }
 
-
-.login-form button {
-  padding: 13px ;
-  background-color: #13cdda;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.login-form button:hover {
-  background-color: #0d6e75;
-}
-
-/* Header */
 .header {
   display: flex;
   justify-content: center;
@@ -269,11 +110,10 @@ html {
 }
 
 .header img {
-  width: 70px;
+  width: 60px;
   height: auto;
 }
 
-/* Loading Screen */
 .loading-screen {
   display: flex;
   justify-content: center;
